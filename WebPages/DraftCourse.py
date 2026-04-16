@@ -26,14 +26,6 @@ class DraftCourse(BasePage):
         self.do_click(self.SEL_DRAFT_COURSE)
         self.do_action_click(self.CANCEL_BTN)
 
-    def draft_course_edit_save(self, title):
-        self.scroll_to_top()
-        self.do_click(self.SEL_DRAFT_COURSE)
-        Title=self.driver.find_element(*self.COURSE_TITLE)
-        Title.clear()
-        self.do_send_keys(self.COURSE_TITLE, title)
-        self.do_action_click(self.SAVE_AND_EXIT_BTN)
-
     def delete_draft_course(self):
         self.scroll_to_top()
         self.do_click(self.SEL_DRAFT_COURSE)
@@ -48,5 +40,13 @@ class DraftCourse(BasePage):
         self.do_click(self.UPDATE_PUBLISH_BTN)
         alert = WebDriverWait(self.driver, 10).until(EC.alert_is_present())
         alert.accept()
+
+    def draft_course_edit_save(self, title):
+        self.scroll_to_top()
+        self.do_click(self.SEL_DRAFT_COURSE)
+        Title=self.driver.find_element(*self.COURSE_TITLE)
+        Title.clear()
+        self.do_send_keys(self.COURSE_TITLE, title)
+        self.do_action_click(self.SAVE_AND_EXIT_BTN)
 
 

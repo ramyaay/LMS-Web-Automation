@@ -19,10 +19,6 @@ class Test_DraftCourse(BaseTest):
         self.DraftCourse = DraftCourse(self.driver)
         self.DraftCourse.draft_course_cancel()
 
-    def test_draft_course_edit_save(self):
-        self.DraftCourse = DraftCourse(self.driver)
-        self.DraftCourse.draft_course_edit_save(TestData.DRAFT_COURSE_TITLE)
-
     def test_delete_draft_course(self):
         self.DraftCourse = DraftCourse(self.driver)
         self.DraftCourse.delete_draft_course()
@@ -30,3 +26,7 @@ class Test_DraftCourse(BaseTest):
     def test_update_draft_course(self):
         self.DraftCourse = DraftCourse(self.driver)
         self.DraftCourse.update_draft_course()
+
+    def test_draft_course_edit_save(self):
+        self.DraftCourse = DraftCourse(self.driver)
+        self.DraftCourse.draft_course_edit_save(TestData.DRAFT_COURSE_TITLE)
