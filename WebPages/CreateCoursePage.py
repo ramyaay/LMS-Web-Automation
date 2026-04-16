@@ -7,7 +7,7 @@ from WebPages.BasePage import BasePage
 
 class CreateCoursePage(BasePage):
     """By Locater -OR"""
-    CREATE_COURSE_BTN=(By.XPATH, "/html[1]/body[1]/div[1]/div[2]/div[1]/div[2]/div[3]/div[1]/div[2]/a[1]")
+    CREATE_COURSE_BTN=(By.XPATH, "//a[@href='/create-course']")
     COURSE_TITLE=(By.XPATH, "//input[@placeholder='e.g., Advanced JavaScript Masterclass']")
     COURSE_DESCRIPTION=(By.XPATH, "//textarea[@placeholder='Describe what students will learn in this course...']")
     COURSE_URL=(By.XPATH, "//input[@type='url']")
@@ -93,7 +93,7 @@ class CreateCoursePage(BasePage):
         self.do_send_keys(self.COURSE_TITLE, course_title)
         self.do_send_keys(self.COURSE_DESCRIPTION, course_description)
 
-        self.do_action_click(self.ADD_LESSON_BTN)
+        self.do_click(self.ADD_LESSON_BTN)
 
         self.do_send_keys(self.ADD_LESSON_TITLE, lesson_title)
 
@@ -109,18 +109,16 @@ class CreateCoursePage(BasePage):
         self.do_click(self.PUBLISH_COURSE_BTN)
         alert = WebDriverWait(self.driver, 10).until(EC.alert_is_present())
         alert.accept()
-        time.sleep(3)
 
     """Create the course saved and saved in the draft"""
 
     def create_course3(self, course_title, course_description, lesson_title, lesson_content):
-        time.sleep(3)
         self.do_action_click(self.CREATE_COURSE_BTN)
 
         self.do_send_keys(self.COURSE_TITLE, course_title)
         self.do_send_keys(self.COURSE_DESCRIPTION, course_description)
 
-        self.do_action_click(self.ADD_LESSON_BTN)
+        self.do_click(self.ADD_LESSON_BTN)
 
         self.do_send_keys(self.ADD_LESSON_TITLE, lesson_title)
 

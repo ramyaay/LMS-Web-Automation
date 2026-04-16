@@ -44,7 +44,7 @@ class Test_CreateCouse(BaseTest):
 
     def test_create_course3(self):
         self.CreateCoursePage = CreateCoursePage(self.driver)
-        self.CreateCoursePage.create_course2(
+        self.CreateCoursePage.create_course3(
             TestData.COURSE_TITLE2,
             TestData.COURSE_DESCRIPTION2,
             TestData.LESSON_TITLE2,
