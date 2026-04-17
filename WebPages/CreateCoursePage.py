@@ -118,7 +118,7 @@ class CreateCoursePage(BasePage):
         self.do_send_keys(self.COURSE_TITLE, course_title)
         self.do_send_keys(self.COURSE_DESCRIPTION, course_description)
 
-        self.do_click(self.ADD_LESSON_BTN)
+        self.do_action_click(self.ADD_LESSON_BTN)
 
         self.do_send_keys(self.ADD_LESSON_TITLE, lesson_title)
 
